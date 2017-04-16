@@ -35,8 +35,9 @@
 				class="col-md-8 col-md-offset-2">
 
 				<div class="form-group">
-					<label for="project-name">Name</label> <input type="text"
-						id="project-name" class="form-control" name="name" />
+					<label for="project-name">Name</label>
+					<form:input id="project-name" cssClass="form-control" path="project.name" />
+					<form:errors path="project.name" />
 				</div>
 
 				<%-- <div class="form-group">
@@ -51,69 +52,72 @@
  --%>
 				<div class="form-group">
 					<label for="project-type">Type</label>
-					<form:select path="project.type" cssClass="selectpicker" items="${types}"></form:select>
+					<form:select path="project.type" cssClass="selectpicker"
+						items="${types}"></form:select>
 				</div>
 				<div class="form-group">
 					<label for="sponsor-name">Sponsor Name</label>
 					<form:input id="sponsor-name" cssClass="form-control"
 						path="project.sponsor.name" />
 				</div>
-					<div class="form-group">
+				<div class="form-group">
 					<label for="poc">POC</label>
 					<form:input id="poc" cssClass="form-control"
 						path="project.pointOfContact[0]" />
 				</div>
-				</div>
-					<div class="form-group">
-					<label for="poc">POC2</label>
-					<form:input id="poc2" cssClass="form-control"
-						path="project.pointOfContact[1]" />
-				</div>
-				</div>
-					<div class="form-group">
-					<label for="poc">POC3</label>
-					<form:input id="poc3" cssClass="form-control"
-						path="project.pointOfContact[2]" />
-				</div>
-				<div class="form-group">
-					<label for="sponsor-phone">Sponsor Phone</label>
-					<form:input id="sponsor-phone" cssClass="form-control"
-						path="project.sponsor.phone" />
-				</div>
-
-				<div class="form-group">
-					<label for="sponsor-email">Sponsor Email</label>
-					<form:input id="sponsor-email" cssClass="form-control"
-						path="project.sponsor.email" />
-				</div>
-
-
-
-				<div class="form-group">
-					<label for="funds">Authorized Funds</label> <input id="funds"
-						type="text" class="form-control" name="authorizedFunds" />
-				</div>
-
-				<div class="form-group">
-					<label for="hours">Authorized Hours</label> <input id="hours"
-						type="text" class="form-control" name="authorizedHours" />
-				</div>
-
-				<div class="form-group">
-					<label for="project-name">Description</label>
-					<textarea class="form-control" name="description" rows="3"></textarea>
-				</div>
-
-				<div class="form-group">
-					<label for="special">Special</label> <input id="special"
-						name="special" type="checkbox" />
-				</div>
-
-				<button type="submit" class="btn btn-default">Submit</button>
-
-			</form>
-
 		</div>
+		<div class="form-group">
+			<label for="poc">POC2</label>
+			<form:input id="poc2" cssClass="form-control"
+				path="project.pointOfContact[1]" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="poc">POC3</label>
+		<form:input id="poc3" cssClass="form-control"
+			path="project.pointOfContact[2]" />
+	</div>
+	<div class="form-group">
+		<label for="sponsor-phone">Sponsor Phone</label>
+		<form:input id="sponsor-phone" cssClass="form-control"
+			path="project.sponsor.phone" />
+	</div>
+
+	<div class="form-group">
+		<label for="sponsor-email">Sponsor Email</label>
+		<form:input id="sponsor-email" cssClass="form-control"
+			path="project.sponsor.email" />
+	</div>
+
+
+
+	<div class="form-group">
+		<label for="funds">Authorized Funds</label> <input id="funds"
+			type="text" class="form-control" name="authorizedFunds" />
+	</div>
+
+	<div class="form-group">
+		<label for="hours">Authorized Hours</label> <input id="hours"
+			type="text" class="form-control" name="authorizedHours" />
+	</div>
+
+	<div class="form-group">
+		<label for="project-name">Description</label>
+		<textarea class="form-control" name="project.description" rows="3"></textarea>
+		<form:errors path="project.description" />
+
+	</div>
+
+	<div class="form-group">
+		<label for="special">Special</label> <input id="special"
+			name="special" type="checkbox" />
+	</div>
+
+	<button type="submit" class="btn btn-default">Submit</button>
+
+	</form>
+
+	</div>
 	</div>
 </body>
 </html>

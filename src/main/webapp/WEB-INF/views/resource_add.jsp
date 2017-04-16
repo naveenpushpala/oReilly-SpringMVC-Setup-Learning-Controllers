@@ -62,6 +62,7 @@
 					<!-- added form:radiobuttons tag -->
 					 <form:radiobuttons path="unitOfMeasure" items="${radioOptions}" />
 					<!-- <input id="unit" type="text" class="form-control" name="unitOfMeasure" /> -->
+				<a id="request-link" href="<spring:url value="/resource/request" />">Send Request</a>
 				</div>
 				
 				<div class="form-group">

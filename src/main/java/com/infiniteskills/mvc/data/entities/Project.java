@@ -3,12 +3,15 @@ package com.infiniteskills.mvc.data.entities;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Project {
 
 	private Long projectId;
 
 	private String name;
 
+	@NotBlank(message="You must provide description")	
 	private String description;
 
 	private Sponsor sponsor;
