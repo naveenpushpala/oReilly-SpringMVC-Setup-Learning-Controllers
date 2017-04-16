@@ -1,5 +1,7 @@
 package com.infiniteskills.mvc.controllers;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +39,16 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
-	public String addProject(HttpSession session){
-		session.setAttribute("token", "12345");
-		System.out.println("invoking addProject");
+//	public String addProject(HttpSession session){
+	public String addProject(Model model){
+//		session.setAttribute("token", "12345");
+//		System.out.println("invoking addProject");
+		model.addAttribute("types", new ArrayList<String>(){{
+			add("");
+			add("Single Year");
+			add("Multi Year");
+		}});
+		model.addAttribute("project", new Project());
 		return "project_add";
 	}
 

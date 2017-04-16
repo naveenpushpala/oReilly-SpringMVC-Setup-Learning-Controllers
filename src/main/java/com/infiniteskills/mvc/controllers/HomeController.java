@@ -22,7 +22,7 @@ public class HomeController {
 		
 		Project project = new Project();
 		project.setName("First Project");
-		project.setSponsor("Nasa");
+//		project.setSponsor("Nasa");
 		project.setDescription("This is a simple project sponsored by NASA");
 		
 		model.addAttribute("currentProject", project);
