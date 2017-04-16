@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.infiniteskills.mvc.data.entities.Resource;
 
 @Controller
 @RequestMapping("/resource")
+@SessionAttributes("resource")
 public class ResourceController {
 
 	@RequestMapping("/add")
@@ -32,6 +34,16 @@ public class ResourceController {
 //		model.addAttribute("resource",new Resource());
 		return "resource_add";
 	}
+	
+	@RequestMapping("/review")
+	public String review(@ModelAttribute Resource resource){
+		
+		System.out.println("Inovking review");
+		return "resource_review";
+		
+	}
+	
+	
 	
 	@ModelAttribute("resource")
 	public Resource getResource(){
