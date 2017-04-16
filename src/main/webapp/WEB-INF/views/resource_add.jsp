@@ -58,8 +58,23 @@
 				</div>
 
 				<div class="form-group">
-					<label for="unit">Unit of Measure</label> <input id="unit"
-						type="text" class="form-control" name="unitOfMeasure" />
+					<label for="unit">Unit of Measure</label> 
+					<!-- added form:radiobuttons tag -->
+					 <form:radiobuttons path="unitOfMeasure" items="${radioOptions}" />
+					<!-- <input id="unit" type="text" class="form-control" name="unitOfMeasure" /> -->
+				</div>
+				
+				<div class="form-group">
+					<label for="indicators">Indicators</label> 
+					<!-- added form:checkboxes tag -->
+					<form:checkboxes id="indicators" path="indicators" items="${checkOptions}" />
+				</div>
+				
+							
+				<div class="form-group">
+					<label for="indicators">Notes</label> 
+					<!-- added form:checkboxes tag -->
+					<form:textarea id="notes" path="notes" class="form-control"  rows="3" />
 				</div>
 				
 				<button type="submit" class="btn btn-default">Submit</button>
