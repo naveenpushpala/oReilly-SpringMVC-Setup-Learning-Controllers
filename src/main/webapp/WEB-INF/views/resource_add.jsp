@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,25 +25,31 @@
 			<h1>Resource</h1>
 		</div>
 		
-		<spring:url value="/resource/save"/>
-		<form action="<spring:url value="/resource/save"/>" method="POST">
+		<spring:url value="/resource/save" var="formUrl" />
+		<form:form action="${formUrl}" method="POST" modelAttribute="resource">
+	<!-- 	<form action="<spring:url value="/resource/save"/>" method="POST"> -->
 			
 			<div class="row">
 				
 				<div class="form-group">
-					<label for="resource-name">Name</label> <input type="text"
-						id="resource-name" class="form-control" name="name" />
+					<label for="resource-name">Name</label> 
+					<!-- <input type="text" id="resource-name" class="form-control" name="name" /> -->
+					<form:input path="name" cssClass="form-control" id="resource-name" />
 				</div>
 
 				<div class="form-group">
 					<label for="resource-type">Type</label> 
-					<select id="resource-type" name="type" class="selectpicker">
+					<!-- adding spring form tags -->
+					<%-- <form:select path="type" items="give values through model or directly"/> --%>
+					<form:select path="type" items="${typeOptions}" cssClass="selectpicker"/>
+					
+					<!-- <select id="resource-type" name="type" class="selectpicker">
 						<option></option>
 						<option value="material">Material</option>
 						<option value="other">Other</option>
 						<option value="staff">Staff</option>
 						<option value="tech">Technical Equipment</option>
-					</select>
+					</select> -->
 				</div>
 
 				<div class="form-group">
@@ -59,7 +66,7 @@
 
 			</div>
 		
-		</form>
+		</form:form>
 		
 	</div>
 </body>
