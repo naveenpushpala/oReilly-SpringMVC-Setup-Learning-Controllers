@@ -79,7 +79,7 @@ public class ProjectController {
 		System.out.println(project);
 		return "project_add";
 	}*/
-	@RequestMapping(value="/add", method=RequestMethod.POST)
+	/*@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String saveProject(@Valid @ModelAttribute Project project, Errors errors,RedirectAttributes attributes){
 		
 		if(!errors.hasErrors()){
@@ -93,6 +93,15 @@ public class ProjectController {
 	attributes.addAttribute("projectId", project.getProjectId().toString());
 		//		return "project_add";
 //		return "redirect:/project/find";
+		return "redirect:/";
+	}
+	*/
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String saveProject(@Valid @ModelAttribute Project project,
+			Errors errors, RedirectAttributes attributes) {
+		project.setProjectId(55L);
+		this.projectService.save(project);
+		attributes.addFlashAttribute("project", project);
 		return "redirect:/";
 	}
 	
