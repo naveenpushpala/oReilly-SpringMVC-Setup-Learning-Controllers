@@ -27,6 +27,6 @@ public class HomeController {
 		
 		model.addAttribute("currentProject", project);
 		
-		return "home";
+		return "welcome";
 	}
 }
